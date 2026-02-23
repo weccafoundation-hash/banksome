@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+     content="Banksome Global Resources operates through four specialized subsidiaries delivering integrated construction, asset management, renewable energy, and oil & gas solutions." />
+    <link rel="preload" href="premium_hero_bg.png" as="image" />
+    
+    <title>Projects & Portfolio | Banksome Global Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* 
+  Banksome Global Resources
+  Fortune 500 Premium Minimalist CSS 
+  Palette: Black (#0B0B0C), White (#FFFFFF), Off-white (#FAFAFA), Accent Orange (#F97316)
+  Typography: Plus Jakarta Sans (Headings), Inter (Body)
+  Spacing: 8px rhythm (applies to padding, gaps, margins)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --color-black: #0B0B0C;
+  --color-white: #FFFFFF;
+  --color-offwhite: #FAFAFA;
+  --color-orange: #F97316;
+  --color-gray-dark: #374151;
+  --color-gray-light: #E5E7EB;
+  
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* Scale for Desktop */
+h1 { font-size: 4rem; margin-bottom: var(--space-4); } /* 64px */
+h2 { font-size: 2.5rem; margin-bottom: var(--space-3); } /* 40px */
+h3 { font-size: 1.625rem; margin-bottom: var(--space-3); } /* 26px */
+h4 { font-size: 1.25rem; } /* 20px */
+p { font-size: 1.125rem; font-weight: 400; color: var(--color-gray-dark); margin-bottom: var(--space-3); line-height: 1.6; }
+small { font-size: 0.875rem; color: var(--color-gray-dark); }
+
+/* Buttons Overrides */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.05em; /* subtle */
+  text-transform: uppercase;
+  font-size: 0.8125rem; /* 13px */
+  padding: var(--space-2) var(--space-4); /* 16px 32px */
+  border-radius: 4px; /* slightly squared corners */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border: 1px solid var(--color-orange);
+}
+
+.btn-primary:hover {
+  background-color: #E06512;
+  border-color: #E06512;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Dropdown Animation (Nav) */
+.nav-dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.group:hover .nav-dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Base Spacing for Sections (80px - 120px rhythm) */
+.section-padding {
+  padding: var(--space-10) var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .section-padding { padding: var(--space-15) var(--space-6); }
+  
+  h1 { font-size: 3.5rem; } /* 56px */
+  h2 { font-size: 2.25rem; } /* 36px */
+  h3 { font-size: 1.5rem; } /* 24px */
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 2.5rem; } /* 40px */
+  h2 { font-size: 1.75rem; } /* 28px */
+  h3 { font-size: 1.25rem; } /* 20px */
+  p { font-size: 1rem; }
+}
+
+/* Micro-Interactions */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Institutional Cards */
+.card-premium {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  padding: var(--space-5);
+  transition: all 0.4s ease;
+  border-radius: 8px; /* 8px consistent radius */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orange accent highlight line on hover */
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card-premium:hover::before {
+  transform: scaleX(1);
+}
+
+.card-premium:hover {
+  border-color: rgba(11, 11, 12, 0.1);
+  box-shadow: 0 16px 32px rgba(11, 11, 12, 0.04);
+}
+
+/* Specific Dark Mode overrides for Corporate Black sections */
+.bg-corporate-black h1, 
+.bg-corporate-black h2, 
+.bg-corporate-black h3, 
+.bg-corporate-black h4 {
+  color: var(--color-white);
+}
+
+.bg-corporate-black p {
+  color: rgba(255,255,255,0.7);
+}
+
+.bg-corporate-black .btn-secondary {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.bg-corporate-black .btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.bg-corporate-black .card-premium {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporate: {
+                            black: '#0B0B0C',
+                            white: '#FFFFFF',
+                            offwhite: '#FAFAFA',
+                            orange: '#F97316',
+                            charcoal: '#111827',
+                            lightgrey: '#FAFAFA',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-corporate-white text-corporate-black antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Premium Global Navigation (Apple-level: minimal, thin blur, clear spacing) -->
+        <!-- Premium Global Navigation (Apple-level: minimal, thin blur, clear spacing) -->
+    <nav id="globalNav" class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-corporate-black/80 backdrop-blur-xl transition-all duration-500 hover:bg-corporate-black/95">
+        <div class="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-6 lg:px-8">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Banksome Global Resources" class="h-[64px] md:h-[72px] w-auto transition-transform duration-500 ease-premium group-hover:scale-105" />
+            </a>
+            
+            <div class="hidden items-center gap-10 text-[13px] font-medium text-white/80 md:flex tracking-[0.03em]">
+                <a href="index.html" class="text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-corporate-orange transition-colors">About</a>
+                
+                <!-- Bespoke Subsidiaries Dropdown -->
+                <div class="group relative flex items-center gap-1.5 cursor-pointer py-8">
+                    <span class="hover:text-corporate-orange transition-colors">Subsidiaries</span>
+                    <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-500 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
+                    
+                    <!-- Dropdown Panel -->
+                    <div class="nav-dropdown absolute top-full left-1/2 -translate-x-1/2 w-[380px] bg-white border border-gray-100 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)] rounded-2xl p-3 flex flex-col gap-1">
+                        
+                        <!-- Premium Thin Stroke SVGs -->
+                        <a href="businesses.html#construction" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Blueprint/Grid SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Construction & Project Mgt.</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Precision infrastructure execution.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="facility-management.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Building/Cog SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Facility & Asset Mgt.</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Optimizing asset lifecycle value.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="renewable-energy.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Solar SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Renewable Energy</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Scalable sustainable systems.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="oil-gas.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Droplet/Flame SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Oil & Gas</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Upstream & downstream engineering.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="hover:text-corporate-orange transition-colors">Projects</a>
+                <a href="contact.html" class="hover:text-corporate-orange transition-colors">Contact</a>
+            </div>
+            
+            <div class="hidden md:block">
+                <a href="about.html" class="btn btn-secondary border-white/30 text-white hover:bg-white hover:text-corporate-black hover:border-white px-6">Download Profile</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white p-2 focus:outline-none" id="menuToggle" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Minimal Bespoke Mobile Menu -->
+        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-corporate-black border-t border-white/10 px-6 py-8 shadow-2xl">
+            <div class="flex flex-col gap-6 text-[15px] font-medium text-white/90">
+                <a href="index.html" class="text-white hover:text-corporate-orange transition-colors">Home</a>
+                <a href="about.html" class="hover:text-corporate-orange transition-colors">About</a>
+                
+                <div class="w-full h-px bg-white/10"></div>
+                <div class="text-[12px] uppercase tracking-widest text-corporate-gray font-bold">Subsidiaries</div>
+                <a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors pl-2">Construction & Project Mgt.</a>
+                <a href="facility-management.html" class="hover:text-corporate-orange transition-colors pl-2">Facility & Asset Mgt.</a>
+                <a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors pl-2">Renewable Energy</a>
+                <a href="oil-gas.html" class="hover:text-corporate-orange transition-colors pl-2">Oil & Gas</a>
+                
+                <div class="w-full h-px bg-white/10 mt-2"></div>
+                <a href="projects.html" class="hover:text-corporate-orange transition-colors">Projects</a>
+                <a href="contact.html" class="hover:text-corporate-orange transition-colors">Contact</a>
+                
+                <div class="pt-4 pb-4">
+                    <a href="about.html" class="btn btn-primary w-full justify-center">Download Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION (Authority Introduction) -->
+    <header class="relative bg-white pt-40 pb-16 md:pt-48 md:pb-24 border-b border-gray-100">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div class="max-w-[900px] reveal active">
+                <h1 class="text-corporate-black text-[32px] md:text-[48px] lg:text-[56px] leading-[1.05] tracking-tight mb-8">
+                    Structured Project Delivery Across Multiple Sectors.
+                </h1>
+                <div class="w-16 h-px bg-corporate-orange mb-8"></div>
+                <p class="text-[16px] md:text-[20px] leading-relaxed text-corporate-gray max-w-2xl font-light">
+                    Highlighting our integrated delivery capabilities, rigorous governance frameworks, and execution discipline across commercial infrastructure and energy deployments.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. PROJECT FILTER / STRUCTURE -->
+    <section class="border-b border-gray-100 bg-corporate-offwhite sticky top-20 z-40 bg-white/90 backdrop-blur-md">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div class="flex overflow-x-auto whitespace-nowrap scrollbar-hide py-4 gap-8 text-[13px] font-semibold text-corporate-gray/70 uppercase tracking-[0.05em]" id="project-filters">
+                <button data-filter="all" class="filter-btn cursor-pointer text-corporate-black border-b-2 border-corporate-orange pb-2 transition-colors hover:text-corporate-black uppercase">All Projects</button>
+                <button data-filter="construction" class="filter-btn cursor-pointer border-b-2 border-transparent hover:text-corporate-black pb-2 transition-colors uppercase">Construction & Project Mgt</button>
+                <button data-filter="facility" class="filter-btn cursor-pointer border-b-2 border-transparent hover:text-corporate-black pb-2 transition-colors uppercase">Facility & Asset Mgt</button>
+                <button data-filter="renewable" class="filter-btn cursor-pointer border-b-2 border-transparent hover:text-corporate-black pb-2 transition-colors uppercase">Renewable Energy</button>
+                <button data-filter="oilgas" class="filter-btn cursor-pointer border-b-2 border-transparent hover:text-corporate-black pb-2 transition-colors uppercase">Oil & Gas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FEATURED PROJECT SECTION -->
+    <section class="py-24 md:py-32 bg-white border-b border-gray-100">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-[11px] uppercase tracking-[0.2em] font-bold text-corporate-orange block mb-2">Featured Engagement</span>
+            </div>
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left: Large Image -->
+                <div class="lg:col-span-8 reveal">
+                    <div class="aspect-[16/9] w-full bg-corporate-black rounded-2xl overflow-hidden relative group cursor-pointer border border-gray-100 shadow-sm">
+                        <img src="premium_construction.png" class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.2s] ease-premium" alt="Commercial Headquarters" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+                <!-- Right: Information Structure -->
+                <div class="lg:col-span-4 reveal">
+                    <h2 class="text-[28px] md:text-[32px] font-semibold text-corporate-black leading-tight tracking-tight mb-8">Lagos Commercial Headquarters Development</h2>
+                    
+                    <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-8">
+                        <div>
+                            <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-gray font-bold mb-1">Sector</span>
+                            <span class="text-[14px] text-corporate-black font-medium">Construction</span>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-gray font-bold mb-1">Location</span>
+                            <span class="text-[14px] text-corporate-black font-medium">Victoria Island, Lagos</span>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-gray font-bold mb-1">Completion</span>
+                            <span class="text-[14px] text-corporate-black font-medium">Q4 2025 (Projected)</span>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-gray font-bold mb-1">Scale</span>
+                            <span class="text-[14px] text-corporate-black font-medium">18-Story High-Rise</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-gray font-bold mb-2">Scope Summary</span>
+                        <p class="text-[14px] text-gray-500 leading-relaxed m-0 font-light">
+                            Project executed under our structured delivery framework as a turnkey EPC. Integrates deep foundation engineering, structural steel methodologies, and centralized intelligent building management systems to ensure Grade-A corporate facility standards.
+                        </p>
+                    </div>
+
+                    <a href="projects.html" class="inline-flex items-center text-[13px] font-semibold text-corporate-black hover:text-corporate-orange transition-colors group">
+                        View Project Details
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECT GRID SECTION -->
+    <section class="py-24 md:py-32 bg-corporate-offwhite border-b border-gray-100">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div id="projects-grid" class="transition-opacity duration-300">
+                <!-- Javascript dynamically injects templates here -->
+            </div>
+            
+            <div class="mt-20 text-center reveal">
+                <a href="#" class="btn btn-secondary px-8 font-[13px] border-gray-300">View Historical Archive</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PERFORMANCE & METRICS SECTION -->
+    <section class="py-24 md:py-32 bg-white border-b border-gray-100">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div class="mb-16 md:mb-20 text-center reveal">
+                <span class="text-[12px] uppercase tracking-[0.12em] text-corporate-orange font-semibold block mb-4">Organizational Competence</span>
+                <h2 class="text-[32px] md:text-[40px] leading-[1.1] tracking-tight text-corporate-black">Delivery Performance Metrics</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                <div class="text-center p-8 border border-gray-100 rounded-2xl bg-corporate-offwhite">
+                    <svg class="w-8 h-8 text-corporate-black mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <span class="block text-[36px] font-bold text-corporate-black leading-none mb-2">120+</span>
+                    <span class="block text-[13px] text-corporate-gray font-semibold uppercase tracking-widest">Projects Delivered</span>
+                </div>
+                
+                <div class="text-center p-8 border border-gray-100 rounded-2xl bg-corporate-offwhite">
+                    <svg class="w-8 h-8 text-corporate-black mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span class="block text-[36px] font-bold text-corporate-black leading-none mb-2">18</span>
+                    <span class="block text-[13px] text-corporate-gray font-semibold uppercase tracking-widest">Active Sites</span>
+                </div>
+                
+                <div class="text-center p-8 border border-gray-100 rounded-2xl bg-corporate-offwhite">
+                    <svg class="w-8 h-8 text-corporate-black mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <span class="block text-[36px] font-bold text-corporate-black leading-none mb-2">0</span>
+                    <span class="block text-[13px] text-corporate-gray font-semibold uppercase tracking-widest">Lost Time Incidents</span>
+                </div>
+
+                <div class="text-center p-8 border border-gray-100 rounded-2xl bg-corporate-offwhite">
+                    <svg class="w-8 h-8 text-corporate-black mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="block text-[36px] font-bold text-corporate-black leading-none mb-2">6</span>
+                    <span class="block text-[13px] text-corporate-gray font-semibold uppercase tracking-widest">Geo-Regions Active</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GOVERNANCE & DELIVERY STATEMENT -->
+    <section class="py-32 md:py-40 bg-corporate-black text-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent mix-blend-overlay"></div>
+        </div>
+        <div class="mx-auto max-w-[800px] px-6 relative z-10 reveal">
+            <h2 class="text-[36px] md:text-[56px] text-white leading-[1.05] tracking-tight mb-8">Execution Backed by Governance.</h2>
+            <div class="w-12 h-px bg-corporate-orange mx-auto mb-8"></div>
+            <p class="text-[16px] md:text-[18px] leading-relaxed text-white/50 font-light max-w-2xl mx-auto">
+                Our organizational capability hinges on rigorous compliance frameworks, preemptive risk management matrices, and unyielding quality assurance standards ensuring predictable asset delivery across all phases.
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. CALL TO ACTION -->
+    <section class="py-24 md:py-32 bg-white text-center">
+        <div class="mx-auto max-w-[800px] px-6 reveal">
+            <h2 class="text-[32px] md:text-[40px] text-corporate-black leading-[1.1] tracking-tight mb-8">Partner With a Proven Delivery Platform.</h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="contact.html" class="btn btn-primary px-8 py-4 rounded-full">Contact Our Team</a>
+                <a href="about.html" class="btn btn-secondary border-gray-300 text-corporate-black hover:bg-corporate-black hover:text-white px-8 py-4 rounded-full">Download Corporate Profile</a>
+            </div>
+        </div>
+    </section>
+
+<!-- 6. FOOTER (Clean Apple-level Padding) -->
+    <footer class="bg-corporate-offwhite py-16 md:py-24 font-sans mt-auto border-t border-gray-100">
+        <div class="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 border-b border-gray-200 pb-16">
+                <!-- Col 1 -->
+                <div class="lg:col-span-1 lg:pr-8">
+                    <img src="logo.png" alt="Banksome Logo" class="h-[64px] mb-6 filter invert" />
+                    <p class="text-[13px] text-corporate-gray font-normal leading-relaxed mb-6">
+                        An integrated holding company focused on enduring structural execution and operations.
+                    </p>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-[11px] uppercase tracking-widest font-bold text-corporate-black mb-6">Construction</h4>
+                    <ul class="space-y-3.5 text-[14px] font-medium text-corporate-gray/80">
+                        <li><a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors">Design & Build</a></li>
+                        <li><a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors">Infrastructure</a></li>
+                        <li><a href="projects.html" class="hover:text-corporate-orange transition-colors">Portfolio</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-[11px] uppercase tracking-widest font-bold text-corporate-black mb-6">Facility & Asset</h4>
+                    <ul class="space-y-3.5 text-[14px] font-medium text-corporate-gray/80">
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors">Lifecycle Protection</a></li>
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors">Maintenance</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-[11px] uppercase tracking-widest font-bold text-corporate-black mb-6">Energy Platforms</h4>
+                    <ul class="space-y-3.5 text-[14px] font-medium text-corporate-gray/80">
+                        <li><a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors">Renewable Systems</a></li>
+                        <li><a href="oil-gas.html" class="hover:text-corporate-orange transition-colors">Oil & Gas Logistics</a></li>
+                    </ul>
+                </div>
+                <!-- Col 5 -->
+                <div>
+                    <h4 class="text-[11px] uppercase tracking-widest font-bold text-corporate-black mb-6">Corporate</h4>
+                    <ul class="space-y-3.5 text-[14px] font-medium text-corporate-gray/80">
+                        <li><a href="about.html" class="hover:text-corporate-orange transition-colors">Group Profile</a></li>
+                        <li><a href="governance.html" class="hover:text-corporate-orange transition-colors">Ethics & ESG</a></li>
+                        <li><a href="contact.html" class="hover:text-corporate-orange transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[12px] font-medium text-corporate-gray">
+                <div>&copy; 2026 Banksome Global Resources. All rights reserved.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-corporate-black transition-colors">Terms</a>
+                    <a href="#" class="hover:text-corporate-black transition-colors">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL OVERLAY -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden opacity-0 pointer-events-none transition-opacity duration-400 ease-premium flex items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-corporate-black/60 backdrop-blur-md"></div>
+        
+        <!-- Modal Content Box -->
+        <div class="modal-content relative bg-white w-full max-w-[1000px] h-[90vh] md:h-auto md:max-h-[90vh] md:rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden transform scale-95 translate-y-4 transition-all duration-500 ease-premium">
+            
+            <!-- Close Button -->
+            <button id="modal-close-btn" class="absolute top-4 right-4 z-50 p-2 bg-white/20 backdrop-blur-lg hover:bg-white text-corporate-black rounded-full transition-colors border border-gray-200 shadow-sm" aria-label="Close modal">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- Left: Imagery -->
+            <div class="w-full md:w-5/12 h-64 md:h-auto bg-corporate-offwhite relative shrink-0">
+                <img id="modal-image" src="" class="absolute inset-0 w-full h-full object-cover" alt="Project Image" />
+            </div>
+            
+            <!-- Right: Details Content (Scrollable) -->
+            <div class="w-full md:w-7/12 p-8 md:p-12 overflow-y-auto">
+                <span id="modal-category" class="inline-block px-3 py-1 bg-corporate-orange/10 text-corporate-orange text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">Category</span>
+                
+                <h2 id="modal-title" class="text-[28px] md:text-[36px] font-semibold text-corporate-black leading-[1.1] mb-4 tracking-tight">Project Title</h2>
+                
+                <div class="flex items-center gap-4 text-[13px] text-corporate-gray/80 uppercase tracking-widest font-bold mb-8">
+                    <span id="modal-location" class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-corporate-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Location Text
+                    </span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-corporate-orange"></span>
+                    <span id="modal-year">Year</span>
+                </div>
+                
+                <div class="mb-10">
+                    <h5 class="text-[11px] uppercase tracking-[0.1em] text-corporate-black font-bold mb-3">Project Overview</h5>
+                    <p id="modal-overview" class="text-[15px] text-corporate-gray leading-relaxed font-light m-0"></p>
+                </div>
+                
+                <div class="mb-10">
+                    <h5 class="text-[11px] uppercase tracking-[0.1em] text-corporate-black font-bold mb-4">Core Scope of Work</h5>
+                    <ul id="modal-scope-list" class="space-y-3 m-0 p-0 list-none">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+                
+                <div class="mb-10">
+                    <h5 class="text-[11px] uppercase tracking-[0.1em] text-corporate-black font-bold mb-4">Delivery Highlights</h5>
+                    <ul id="modal-highlight-list" class="space-y-3 m-0 p-0 list-none">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="pt-8 border-t border-gray-100 flex items-start gap-4">
+                    <div class="p-3 bg-corporate-offwhite rounded-xl text-corporate-black shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <div>
+                        <span class="block text-[11px] uppercase tracking-[0.1em] text-corporate-black font-bold mb-1">Quality & Safety Assurance</span>
+                        <p id="modal-safety" class="text-[13px] text-corporate-gray leading-snug m-0">Safety note</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle Setup
+    const toggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (toggle && mobileMenu) {
+        toggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // 2. Scroll Reveal Animations (Subtle fade/slide)
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px" // triggers slightly before scrolling fully into view
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Unobserve after activating so it doesn't repeat on scroll up
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    // Apply observer to any element with .reveal
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // 3. Apple-Level Bespoke Hero Slider (Arrowless, 11s timing)
+    const track = document.getElementById('heroTrack');
+    const paginations = document.querySelectorAll('.js-pagination');
+    const processBars = document.querySelectorAll('.js-progress');
+    
+    if (track && paginations.length > 0) {
+        let currentIndex = 0;
+        const totalSlides = paginations.length;
+        const slideDuration = 11000; // Exact 11 seconds requirement
+        let slideTimer;
+
+        // Reset all progress bars to 0 width and no transition
+        const resetProgress = () => {
+            processBars.forEach(bar => {
+                bar.style.transition = 'none';
+                bar.classList.remove('w-full');
+                bar.classList.add('w-0');
+            });
+            // Force reflow to ensure removal of transitions takes effect instantly
+            void track.offsetWidth; 
+        };
+
+        // Start progress bar animation for the current slide
+        const startProgress = (index) => {
+            const currentBar = processBars[index];
+            currentBar.style.transition = `width ${slideDuration}ms linear`;
+            currentBar.classList.remove('w-0');
+            currentBar.classList.add('w-full');
+        };
+
+        const updateSlider = (index) => {
+            // Update track position (100% * index)
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Re-trigger reveal animations inside the active slide
+            const slides = track.children;
+            Array.from(slides).forEach(slide => {
+                const reveals = slide.querySelectorAll('.reveal');
+                reveals.forEach(r => r.classList.remove('active'));
+            });
+            
+            setTimeout(() => {
+                const activeReveals = slides[index].querySelectorAll('.reveal');
+                activeReveals.forEach(r => r.classList.add('active'));
+            }, 50); // slight delay to ensure position has updated
+
+            resetProgress();
+            
+            // For past slides, show them as fully completed (optional, or just keep them empty. Apple usually keeps them empty or full. Let's keep empty for minimalism, except the active one).
+            startProgress(index);
+        };
+
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider(currentIndex);
+        };
+
+        const startTimer = () => {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, slideDuration);
+        };
+
+        // Manual click on pagination indicators
+        paginations.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const index = parseInt(e.currentTarget.getAttribute('data-index'));
+                if (index !== currentIndex) {
+                    currentIndex = index;
+                    updateSlider(currentIndex);
+                    startTimer(); // Restart the 11s loop on manual click
+                }
+            });
+        });
+
+        // Initialize first slide
+        updateSlider(0);
+        startTimer();
+    }
+});
+
+/**
+ * Banksome Global Resources - Projects Data & Rendering logic
+ * Driven by Apple-level minimalist Fortune 500 aesthetic constraints.
+ */
+
+const projectData = [
+    // 1) Construction & Project Management
+    {
+        id: 'cpm-1',
+        category: 'construction',
+        categoryLabel: 'Construction & Project Mgt',
+        title: 'Commercial Office Complex Development',
+        location: 'Lagos, Nigeria',
+        year: '2024',
+        shortScope: 'Turnkey EPC delivery uniting deep foundation engineering and Grade-A facility standards.',
+        image: 'premium_construction.png',
+        overview: 'A flagship Grade-A commercial office complex integrating advanced structural frameworks and intelligent building systems, redefining the corporate skyline in central Lagos.',
+        scope: [
+            'Deep foundation piling and civil sub-structures.',
+            'Structural steel methodologies and high-performance facade engineering.',
+            'Centralized HVAC and intelligent building management systems (BMS).'
+        ],
+        highlights: [
+            'Delivered within 18 months, 12% ahead of scheduled timeline.',
+            'Achieved LEED-compliant energy efficiency ratings.',
+            'Integrated predictive maintenance infrastructure.'
+        ],
+        safety: 'Zero Lost Time Incidents (LTI) over 1.2 million man-hours via strict ISO safety protocols.'
+    },
+    {
+        id: 'cpm-2',
+        category: 'construction',
+        categoryLabel: 'Construction & Project Mgt',
+        title: 'Residential Estate Infrastructure Works',
+        location: 'Abuja, Nigeria',
+        year: '2023',
+        shortScope: 'Extensive site civil works, utility reticulation, and road networks for a premium residential enclave.',
+        image: 'premium_hero_bg.png', // Fallback imagery
+        overview: 'Complete civil infrastructure enabling works for a multi-hectare luxury residential development in the Federal Capital Territory, ensuring subterranean utility resilience.',
+        scope: [
+            'Site clearing, grading, and bulk earthworks.',
+            'Underground power reticulation and high-capacity drainage systems.',
+            'Premium asphalt road networks and pedestrian walkways.'
+        ],
+        highlights: [
+            'Deployed advanced topographical modeling for flood mitigation.',
+            'Integrated fiber-optic ducting across 14 kilometers of internal roads.',
+            'Executed with minimal disruption to environmental topography.'
+        ],
+        safety: 'Consistently maintained top-tier safety audits with full compliance to local environmental regulations.'
+    },
+    {
+        id: 'cpm-3',
+        category: 'construction',
+        categoryLabel: 'Construction & Project Mgt',
+        title: 'Institutional Facility Upgrade Programme',
+        location: 'Accra, Ghana',
+        year: '2022',
+        shortScope: 'Comprehensive structural rehabilitation and systems upgrade for a legacy institutional building.',
+        image: 'premium_facility.png',
+        overview: 'A precision-driven retrofit of a major institutional headquarters, introducing modern operational efficiencies without compromising structural legacy.',
+        scope: [
+            'Structural reinforcement and seismic retrofitting.',
+            'Complete overhaul of electrical, plumbing, and life-safety systems.',
+            'Implementation of modern, high-efficiency interior layouts.'
+        ],
+        highlights: [
+            'Conducted major structural works in a live operational environment.',
+            'Reduced facility energy consumption by 24% post-upgrade.',
+            'Modernized access control and centralized security oversight.'
+        ],
+        safety: 'Executed continuous operations with rigorous noise and dust containment protocols.'
+    },
+    {
+        id: 'cpm-4',
+        category: 'construction',
+        categoryLabel: 'Construction & Project Mgt',
+        title: 'Mixed-Use Development Project Delivery',
+        location: 'Lekki, Nigeria',
+        year: 'Ongoing',
+        shortScope: 'Integrated delivery of retail, corporate, and residential zones within a high-density urban node.',
+        image: 'premium_construction.png',
+        overview: 'An ambitious mixed-use architectural endeavor demanding strict logistical coordination and multi-phase structural execution in a densely populated commercial hub.',
+        scope: [
+            'Multi-phase civil and structural construction.',
+            'Integration of distinct residential and commercial utility grids.',
+            'Advanced podium-level parking structures and traffic flow design.'
+        ],
+        highlights: [
+            'Concurrent multi-tower construction methodologies.',
+            'Strategic procurement buffering against supply chain volatility.',
+            'Phased handover strategy to accelerate asset monetization.'
+        ],
+        safety: 'Stringent urban site safety policies mitigating public interface risks to zero.'
+    },
+
+    // 2) Facility & Asset Management
+    {
+        id: 'fam-1',
+        category: 'facility',
+        categoryLabel: 'Facility & Asset Mgt',
+        title: 'Corporate Headquarters Facility Operations',
+        location: 'Victoria Island, Lagos',
+        year: 'Ongoing',
+        shortScope: 'Holistic hard and soft service integration optimizing asset lifecycle and workplace productivity.',
+        image: 'premium_facility.png',
+        overview: 'Providing end-to-end facility management for a highly sensitive corporate headquarters, guaranteeing 99.9% uptime for critical infrastructure.',
+        scope: [
+            '24/7 electromechanical infrastructure maintenance.',
+            'Comprehensive janitorial, landscaping, and premium soft services.',
+            'Vendor and utility management with automated SLA tracking.'
+        ],
+        highlights: [
+            'Optimized power utilization yielding a 15% OPEX reduction.',
+            'Digitized defect reporting reducing resolution times to under 2 hours.',
+            'Maintained immaculate standard aligned with Fortune 500 workplace expectations.'
+        ],
+        safety: 'Rigorous life-safety audits and emergency protocol compliance verified monthly.'
+    },
+    {
+        id: 'fam-2',
+        category: 'facility',
+        categoryLabel: 'Facility & Asset Mgt',
+        title: 'Preventive Maintenance & Asset Lifecycle Program',
+        location: 'Ikoyi, Lagos',
+        year: '2024',
+        shortScope: 'Data-driven preventive maintenance scheduling maximizing capital asset endurance.',
+        image: 'premium_hero_bg.png',
+        overview: 'Deployment of a proactive, predictive maintenance framework across a portfolio of high-value assets to prevent unexpected operational latency.',
+        scope: [
+            'Comprehensive asset tagging and condition assessment.',
+            'Deployment of predictive HVAC, elevator, and generator servicing.',
+            'Lifecycle capital planning and degradation forecasting.'
+        ],
+        highlights: [
+            'Reduced reactive maintenance incidents by 62%.',
+            'Extended heavy machinery lifespan beyond manufacturer baselines.',
+            'Provided transparent, real-time OPEX dashboards to stakeholders.'
+        ],
+        safety: 'Achieved zero downtime on critical life-safety systems (fire/security) throughout the term.'
+    },
+    {
+        id: 'fam-3',
+        category: 'facility',
+        categoryLabel: 'Facility & Asset Mgt',
+        title: 'Residential Estate Soft & Hard Services',
+        location: 'Abuja, Nigeria',
+        year: '2023',
+        shortScope: 'Premium estate management delivering seamless utility, security, and communal upkeep.',
+        image: 'premium_facility.png',
+        overview: 'Executing a sophisticated facility playbook for an exclusive residential enclave, ensuring high occupant satisfaction and untarnished property valuation.',
+        scope: [
+            'Centralized water treatment and power generation management.',
+            'High-end landscaping, road sweeping, and refuse logistics.',
+            'Access control integration and perimeter security operations.'
+        ],
+        highlights: [
+            'Maintained 100% utility uptime despite regional grid instability.',
+            'Implemented a digital concierge resulting in an 98% resident satisfaction score.',
+            'Drove eco-friendly waste segregation initiatives.'
+        ],
+        safety: 'Enforced strict community health, safety, and operational governance.'
+    },
+    {
+        id: 'fam-4',
+        category: 'facility',
+        categoryLabel: 'Facility & Asset Mgt',
+        title: 'Integrated FM for Mixed-Use Property Portfolio',
+        location: 'Lekki, Nigeria',
+        year: '2022',
+        shortScope: 'Scalable operational management across disparate retail and office environments.',
+        image: 'premium_facility.png',
+        overview: 'Streamlined facility operations for a complex mixed-use portfolio, balancing the high-traffic demands of retail with the precision needs of corporate tenants.',
+        scope: [
+            'Multi-tenant utilities metering and automated billing management.',
+            'High-traffic common area cleaning and hygiene control.',
+            'Preventive servicing of heavy-duty escalators and central chillers.'
+        ],
+        highlights: [
+            'Consolidated vendor contracts, reducing operational overhead by 12%.',
+            'Successfully managed logistics for over 15,000 daily footfalls.',
+            'Rapid deployment teams maintained aesthetics during peak usage.'
+        ],
+        safety: 'Flawless execution of crowd control and emergency evacuation simulations.'
+    },
+
+    // 3) Renewable Energy
+    {
+        id: 're-1',
+        category: 'renewable',
+        categoryLabel: 'Renewable Energy',
+        title: 'Solar Hybrid Power Deployment (Commercial Site)',
+        location: 'Lagos, Nigeria',
+        year: '2024',
+        shortScope: 'Executed a robust hybrid solar framework securing reliable grid independence.',
+        image: 'premium_renewable.png',
+        overview: 'A high-capacity solar hybrid installation designed to eliminate operational diesel dependencies for a major commercial logistics facility.',
+        scope: [
+            'Design and installation of a 2MW rooftop solar array.',
+            'Integration of industrial-grade lithium energy storage systems.',
+            'Implementation of smart load-balancing and grid-tied inverters.'
+        ],
+        highlights: [
+            'Offset commercial carbon footprint by over 800 metric tons annually.',
+            'Achieved a projected ROI of 4.2 years against standard tariff rates.',
+            'Provided uninterrupted power during continuous national grid failures.'
+        ],
+        safety: 'Executed high-voltage integrations adhering to stringent international IEC standards.'
+    },
+    {
+        id: 're-2',
+        category: 'renewable',
+        categoryLabel: 'Renewable Energy',
+        title: 'Energy Audit & Optimization Programme',
+        location: 'Abuja, Nigeria',
+        year: '2023',
+        shortScope: 'Comprehensive consumption analysis and subsequent efficiency retrofitting.',
+        image: 'premium_hero_bg.png',
+        overview: 'A deep-dive technical assessment of a corporate facility’s energy footprint to identify and rectify systemic consumption inefficiencies.',
+        scope: [
+            'Thermographic analysis of electrical and HVAC infrastructure.',
+            'Load profiling and phase-balancing assessments.',
+            'Implementation of LED retrofits and smart motion-sensor protocols.'
+        ],
+        highlights: [
+            'Identified passive energy leaks accounting for 18% of the power bill.',
+            'Reduced base-load requirement by 115kW without operational impact.',
+            'Established benchmark metrics for future facility expansions.'
+        ],
+        safety: 'Safe forensic electrical testing completed with zero operational interference.'
+    },
+    {
+        id: 're-3',
+        category: 'renewable',
+        categoryLabel: 'Renewable Energy',
+        title: 'Solar Streetlight Infrastructure Rollout',
+        location: 'Accra, Ghana',
+        year: '2022',
+        shortScope: 'Large-scale deployment of autonomous, high-lumen solar pathway lighting.',
+        image: 'premium_renewable.png',
+        overview: 'An infrastructure project providing sustainable, self-sufficient illumination across municipal roadways to enhance public safety and lower utility burdens.',
+        scope: [
+            'Geospatial planning for optimal irradiation harvesting.',
+            'Installation of 500+ integrated solar lighting columns.',
+            'Deployment of central telemetry for remote monitoring and diagnostics.'
+        ],
+        highlights: [
+            'Eliminated ongoing municipal electricity costs for road illumination.',
+            'Drastically improved nighttime visibility and reduced related traffic incidents.',
+            'Weather-sealed units proven to withstand severe coastal conditions.'
+        ],
+        safety: 'Civil and electrical works along active roadways executed with comprehensive traffic management.'
+    },
+    {
+        id: 're-4',
+        category: 'renewable',
+        categoryLabel: 'Renewable Energy',
+        title: 'Renewable Retrofit for Facility Efficiency',
+        location: 'Lekki, Nigeria',
+        year: 'Ongoing',
+        shortScope: 'Integration of sustainable power mechanisms into an existing legacy commercial structure.',
+        image: 'premium_renewable.png',
+        overview: 'A phased integration of renewable energy assets to gradually transition a traditionally powered commercial site toward net-zero operation.',
+        scope: [
+            'Incremental installation of modular solar canopies over parking zones.',
+            'Upgrading legacy HVAC units to high-efficiency inverter models.',
+            'Implementing a localized smart-grid interface.'
+        ],
+        highlights: [
+            'Generated immediate OPEX relief via the phase 1 parking canopy array.',
+            'Avoided capital expenditure shocks through phased deployment.',
+            'Enhanced the asset’s green credential and tenant appeal.'
+        ],
+        safety: 'Seamless integration with existing heavy electrical infrastructure under strict lockout/tagout (LOTO) procedures.'
+    },
+
+    // 4) Oil & Gas
+    {
+        id: 'og-1',
+        category: 'oilgas',
+        categoryLabel: 'Oil & Gas',
+        title: 'Offshore Logistics & Marine Support Services',
+        location: 'Niger Delta, Nigeria',
+        year: 'Ongoing',
+        shortScope: 'Provided comprehensive offshore logistics architecture adhering to ISO-certified parameters.',
+        image: 'premium_facility.png',
+        overview: 'A vital support mobilization operation ensuring uninterrupted supply chain and personnel transit to deep-water offshore drilling assets.',
+        scope: [
+            'Coordination of fast-crew boats and platform supply vessels (PSVs).',
+            'Management of onshore staging bases and warehouse logistics.',
+            'Rigorous tracking of equipment manifests and dangerous goods.'
+        ],
+        highlights: [
+            'Maintained 99% vessel dispatch reliability over a 24-month cycle.',
+            'Optimized payload logistics, reducing offshore vessel turns by 10%.',
+            'Implemented real-time digital tracking from warehouse to platform.'
+        ],
+        safety: 'Maintained an unblemished marine safety record with strict adherence to OPITO standards.'
+    },
+    {
+        id: 'og-2',
+        category: 'oilgas',
+        categoryLabel: 'Oil & Gas',
+        title: 'Pipeline Materials Procurement & Supply',
+        location: 'Port Harcourt, Nigeria',
+        year: '2024',
+        shortScope: 'Precision sourcing and delivery of critical line-pipe and anti-corrosion materials.',
+        image: 'premium_hero_bg.png',
+        overview: 'A high-stakes procurement engagement supplying specialized metallurgical pipeline components to an active upstream development project.',
+        scope: [
+            'Global sourcing of API 5L grade line-pipe.',
+            'Quality assurance and factory acceptance testing (FAT) oversight.',
+            'Complex customs clearance and heavy-lift inland transportation.'
+        ],
+        highlights: [
+            'Delivered 40 kilometers of specialized pipe 3 weeks ahead of schedule.',
+            'Navigated volatile global supply chains without budget overruns.',
+            'Ensured 100% material compliance to exacting technical specifications.'
+        ],
+        safety: 'Zero incidents during the heavy haulage of oversized materials across state infrastructure.'
+    },
+    {
+        id: 'og-3',
+        category: 'oilgas',
+        categoryLabel: 'Oil & Gas',
+        title: 'Field Operations Support & Maintenance',
+        location: 'Warri, Nigeria',
+        year: '2023',
+        shortScope: 'Execution of critical mechanical and minor civil interventions on active flow stations.',
+        image: 'premium_construction.png',
+        overview: 'Providing specialized technical manpower and equipment to maintain optimal operational capacity at onshore oil processing facilities.',
+        scope: [
+            'Routine and corrective maintenance of rotating equipment.',
+            'Fabrication and installation of process pipework.',
+            'Civil remediation of operational platforms and bund walls.'
+        ],
+        highlights: [
+            'Completed a major facility turnaround 4 days under the allocated window.',
+            'Significantly enhanced pump efficiency through targeted overhauls.',
+            'Provided rapid-response technical teams for emergent shutdowns.'
+        ],
+        safety: 'Operations executed in hazardous localized environments (Zone 1) with zero permit-to-work violations.'
+    },
+    {
+        id: 'og-4',
+        category: 'oilgas',
+        categoryLabel: 'Oil & Gas',
+        title: 'Facility Construction Support (Energy Sector)',
+        location: 'Lagos, Nigeria',
+        year: '2022',
+        shortScope: 'Civil and structural enablement for expansive tank farm and terminal infrastructure.',
+        image: 'premium_facility.png',
+        overview: 'Specialized structural and civil engineering executed inside a live petroleum product terminal to expand storage capacities.',
+        scope: [
+            'Construction of reinforced concrete ring beams and pile caps.',
+            'Erection of extensive blast-proof operational facility walls.',
+            'Installation of high-capacity industrial drainage and interceptors.'
+        ],
+        highlights: [
+            'Executed works adjacent to active hydrocarbon storage with extreme precision.',
+            'Delivered foundation capacities exceeding original load requirements by 15%.',
+            'Integrated modern containment barriers preventing potential soil contamination.'
+        ],
+        safety: 'Maintained an exemplary HSE profile working in a highly volatile, active terminal environment.'
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gridContainer = document.getElementById('projects-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const modalOverlay = document.getElementById('project-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    
+    // Modal Content Elements
+    const mCategory = document.getElementById('modal-category');
+    const mTitle = document.getElementById('modal-title');
+    const mLocation = document.getElementById('modal-location');
+    const mYear = document.getElementById('modal-year');
+    const mOverview = document.getElementById('modal-overview');
+    const mScopeList = document.getElementById('modal-scope-list');
+    const mHighlightList = document.getElementById('modal-highlight-list');
+    const mSafety = document.getElementById('modal-safety');
+    const mImage = document.getElementById('modal-image');
+
+    // Create a card HTML string
+    function createCardHTML(project) {
+        return `
+            <div class="group block reveal active cursor-pointer project-card transition-all duration-500 ease-in-out" data-id="${project.id}" onclick="openProjectModal('${project.id}')">
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-corporate-black border border-gray-100 shadow-sm transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)]">
+                    <img src="${project.image}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover scale-100 grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[800ms] ease-premium" />
+                    <div class="absolute bottom-4 left-4">
+                        <span class="px-3 py-1 bg-corporate-orange text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-md">${project.categoryLabel}</span>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-corporate-orange scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                </div>
+                <div class="flex flex-col gap-2 transition-transform duration-500 group-hover:-translate-y-1">
+                    <h4 class="text-[20px] font-semibold text-corporate-black m-0 tracking-tight leading-tight">${project.title}</h4>
+                    <div class="flex items-center gap-3 text-[12px] text-corporate-gray/70 uppercase tracking-widest font-bold">
+                        <span>${project.location}</span>
+                        <span class="w-1 h-1 rounded-full bg-corporate-orange"></span>
+                        <span>${project.year}</span>
+                    </div>
+                    <p class="text-[14px] text-corporate-gray/90 m-0 mt-1 font-light block line-clamp-2 leading-relaxed">${project.shortScope}</p>
+                    
+                    <div class="mt-2 inline-flex items-center text-[12px] font-semibold text-corporate-black group-hover:text-corporate-orange transition-colors">
+                        View Details
+                        <svg class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    const categories = [
+        { id: 'construction', label: 'Construction & Project Management' },
+        { id: 'facility', label: 'Facility & Asset Management' },
+        { id: 'renewable', label: 'Renewable Energy' },
+        { id: 'oilgas', label: 'Oil & Gas' }
+    ];
+
+    // Render cards to grid
+    function renderProjects(filter = 'all') {
+        gridContainer.style.opacity = '0';
+        
+        setTimeout(() => {
+            let htmlString = '';
+
+            categories.forEach(cat => {
+                if (filter === 'all' || filter === cat.id) {
+                    const catProjects = projectData.filter(p => p.category === cat.id);
+                    if (catProjects.length > 0) {
+                        htmlString += `
+                            <div class="mb-24 last:mb-0 w-full" id="section-${cat.id}">
+                                <div class="mb-12">
+                                    <h3 class="text-[28px] md:text-[36px] font-semibold text-corporate-black tracking-tight leading-tight mb-4">${cat.label}</h3>
+                                    <div class="w-16 h-[2px] bg-corporate-orange"></div>
+                                </div>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                                    ${catProjects.map(createCardHTML).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            });
+
+            gridContainer.innerHTML = htmlString;
+            
+            // Trigger reflow for transition
+            void gridContainer.offsetWidth;
+            gridContainer.style.opacity = '1';
+        }, 300); // Wait for fade out
+    }
+
+    // Filter Navigation Click Handlers
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Remove active state from all
+            filterButtons.forEach(b => {
+                b.classList.remove('text-corporate-black', 'border-corporate-orange');
+                b.classList.add('border-transparent');
+            });
+            // Add active state to clicked
+            const target = e.currentTarget;
+            target.classList.remove('border-transparent');
+            target.classList.add('text-corporate-black', 'border-corporate-orange');
+            
+            const category = target.getAttribute('data-filter');
+            renderProjects(category);
+        });
+    });
+
+    // Make openProjectModal available globally
+    window.openProjectModal = (id) => {
+        const project = projectData.find(p => p.id === id);
+        if (!project) return;
+
+        // Populate modal data
+        mCategory.textContent = project.categoryLabel;
+        mTitle.textContent = project.title;
+        mLocation.textContent = project.location;
+        mYear.textContent = project.year;
+        mOverview.textContent = project.overview;
+        
+        mScopeList.innerHTML = project.scope.map(s => `<li class="flex items-start"><svg class="w-5 h-5 text-corporate-orange mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-corporate-gray leading-relaxed text-[15px]">${s}</span></li>`).join('');
+        
+        mHighlightList.innerHTML = project.highlights.map(h => `<li class="flex items-start"><svg class="w-5 h-5 text-corporate-black mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg><span class="text-corporate-gray leading-relaxed text-[15px]">${h}</span></li>`).join('');
+        
+        mSafety.textContent = project.safety;
+        mImage.src = project.image;
+
+        // Show Modal
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        modalOverlay.classList.remove('hidden');
+        // Slight delay to allow display block to apply before transition
+        setTimeout(() => {
+            modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            modalOverlay.querySelector('.modal-content').classList.remove('scale-95', 'translate-y-4');
+        }, 10);
+    };
+
+    const closeModal = () => {
+        modalOverlay.classList.add('opacity-0', 'pointer-events-none');
+        modalOverlay.querySelector('.modal-content').classList.add('scale-95', 'translate-y-4');
+        
+        setTimeout(() => {
+            modalOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 400); // Matches Tailwind transition duration (duration-400 or handle manually)
+    };
+
+    // Close Modal Events
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+
+    // Initial render
+    renderProjects('all');
+});
+    </script>
+</body>
+</html>

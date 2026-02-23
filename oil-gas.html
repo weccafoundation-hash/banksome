@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Integrated Oil & Gas Solutions delivering engineering, drilling, logistics, and production support services." />
+    <title>Banksome Oil & Gas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* 
+  Banksome Global Resources
+  Fortune 500 Premium Minimalist CSS 
+  Palette: Black (#0B0B0C), White (#FFFFFF), Off-white (#FAFAFA), Accent Orange (#F97316)
+  Typography: Plus Jakarta Sans (Headings), Inter (Body)
+  Spacing: 8px rhythm (applies to padding, gaps, margins)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --color-black: #0B0B0C;
+  --color-white: #FFFFFF;
+  --color-offwhite: #FAFAFA;
+  --color-orange: #F97316;
+  --color-gray-dark: #374151;
+  --color-gray-light: #E5E7EB;
+  
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* Scale for Desktop */
+h1 { font-size: 4rem; margin-bottom: var(--space-4); } /* 64px */
+h2 { font-size: 2.5rem; margin-bottom: var(--space-3); } /* 40px */
+h3 { font-size: 1.625rem; margin-bottom: var(--space-3); } /* 26px */
+h4 { font-size: 1.25rem; } /* 20px */
+p { font-size: 1.125rem; font-weight: 400; color: var(--color-gray-dark); margin-bottom: var(--space-3); line-height: 1.6; }
+small { font-size: 0.875rem; color: var(--color-gray-dark); }
+
+/* Buttons Overrides */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.05em; /* subtle */
+  text-transform: uppercase;
+  font-size: 0.8125rem; /* 13px */
+  padding: var(--space-2) var(--space-4); /* 16px 32px */
+  border-radius: 4px; /* slightly squared corners */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border: 1px solid var(--color-orange);
+}
+
+.btn-primary:hover {
+  background-color: #E06512;
+  border-color: #E06512;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Dropdown Animation (Nav) */
+.nav-dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.group:hover .nav-dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Base Spacing for Sections (80px - 120px rhythm) */
+.section-padding {
+  padding: var(--space-10) var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .section-padding { padding: var(--space-15) var(--space-6); }
+  
+  h1 { font-size: 3.5rem; } /* 56px */
+  h2 { font-size: 2.25rem; } /* 36px */
+  h3 { font-size: 1.5rem; } /* 24px */
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 2.5rem; } /* 40px */
+  h2 { font-size: 1.75rem; } /* 28px */
+  h3 { font-size: 1.25rem; } /* 20px */
+  p { font-size: 1rem; }
+}
+
+/* Micro-Interactions */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Institutional Cards */
+.card-premium {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  padding: var(--space-5);
+  transition: all 0.4s ease;
+  border-radius: 8px; /* 8px consistent radius */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orange accent highlight line on hover */
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card-premium:hover::before {
+  transform: scaleX(1);
+}
+
+.card-premium:hover {
+  border-color: rgba(11, 11, 12, 0.1);
+  box-shadow: 0 16px 32px rgba(11, 11, 12, 0.04);
+}
+
+/* Specific Dark Mode overrides for Corporate Black sections */
+.bg-corporate-black h1, 
+.bg-corporate-black h2, 
+.bg-corporate-black h3, 
+.bg-corporate-black h4 {
+  color: var(--color-white);
+}
+
+.bg-corporate-black p {
+  color: rgba(255,255,255,0.7);
+}
+
+.bg-corporate-black .btn-secondary {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.bg-corporate-black .btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.bg-corporate-black .card-premium {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporate: {
+                            black: '#0B0B0C',
+                            white: '#FFFFFF',
+                            offwhite: '#FAFAFA',
+                            orange: '#F97316',
+                            charcoal: '#111827',
+                            lightgrey: '#FAFAFA',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-800 antialiased font-sans">
+    <!-- Navbar (Banksome Global Resources) -->
+    <!-- Global Executive Navigation -->
+        <!-- Global Executive Navigation -->
+        <!-- Premium Global Navigation (Apple-level: minimal, thin blur, clear spacing) -->
+    <nav id="globalNav" class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-corporate-black/80 backdrop-blur-xl transition-all duration-500 hover:bg-corporate-black/95">
+        <div class="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-6 lg:px-8">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Banksome Global Resources" class="h-[64px] md:h-[72px] w-auto transition-transform duration-500 ease-premium group-hover:scale-105" />
+            </a>
+            
+            <div class="hidden items-center gap-10 text-[13px] font-medium text-white/80 md:flex tracking-[0.03em]">
+                <a href="index.html" class="text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-corporate-orange transition-colors">About</a>
+                
+                <!-- Bespoke Subsidiaries Dropdown -->
+                <div class="group relative flex items-center gap-1.5 cursor-pointer py-8">
+                    <span class="hover:text-corporate-orange transition-colors">Subsidiaries</span>
+                    <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-500 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
+                    
+                    <!-- Dropdown Panel -->
+                    <div class="nav-dropdown absolute top-full left-1/2 -translate-x-1/2 w-[380px] bg-white border border-gray-100 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)] rounded-2xl p-3 flex flex-col gap-1">
+                        
+                        <!-- Premium Thin Stroke SVGs -->
+                        <a href="businesses.html#construction" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Blueprint/Grid SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Construction & Project Mgt.</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Precision infrastructure execution.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="facility-management.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Building/Cog SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Facility & Asset Mgt.</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Optimizing asset lifecycle value.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="renewable-energy.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Solar SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Renewable Energy</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Scalable sustainable systems.</span>
+                            </div>
+                        </a>
+                        
+                        <a href="oil-gas.html" class="relative overflow-hidden flex items-start gap-4 p-4 rounded-xl hover:bg-corporate-offwhite transition-colors group/link">
+                            <div class="absolute bottom-0 left-4 right-4 h-[1px] bg-corporate-orange scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-500 ease-premium"></div>
+                            <div class="mt-0.5 opacity-80 group-hover/link:opacity-100 group-hover/link:text-corporate-orange transition-all">
+                                <!-- Droplet/Flame SVG -->
+                                <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[14px] font-semibold text-corporate-black tracking-tight mb-1">Oil & Gas</span>
+                                <span class="block text-[13px] text-corporate-gray leading-snug">Upstream & downstream engineering.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="hover:text-corporate-orange transition-colors">Projects</a>
+                <a href="contact.html" class="hover:text-corporate-orange transition-colors">Contact</a>
+            </div>
+            
+            <div class="hidden md:block">
+                <a href="about.html" class="btn btn-secondary border-white/30 text-white hover:bg-white hover:text-corporate-black hover:border-white px-6">Download Profile</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white p-2 focus:outline-none" id="menuToggle" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Minimal Bespoke Mobile Menu -->
+        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-corporate-black border-t border-white/10 px-6 py-8 shadow-2xl">
+            <div class="flex flex-col gap-6 text-[15px] font-medium text-white/90">
+                <a href="index.html" class="text-white hover:text-corporate-orange transition-colors">Home</a>
+                <a href="about.html" class="hover:text-corporate-orange transition-colors">About</a>
+                
+                <div class="w-full h-px bg-white/10"></div>
+                <div class="text-[12px] uppercase tracking-widest text-corporate-gray font-bold">Subsidiaries</div>
+                <a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors pl-2">Construction & Project Mgt.</a>
+                <a href="facility-management.html" class="hover:text-corporate-orange transition-colors pl-2">Facility & Asset Mgt.</a>
+                <a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors pl-2">Renewable Energy</a>
+                <a href="oil-gas.html" class="hover:text-corporate-orange transition-colors pl-2">Oil & Gas</a>
+                
+                <div class="w-full h-px bg-white/10 mt-2"></div>
+                <a href="projects.html" class="hover:text-corporate-orange transition-colors">Projects</a>
+                <a href="contact.html" class="hover:text-corporate-orange transition-colors">Contact</a>
+                
+                <div class="pt-4 pb-4">
+                    <a href="about.html" class="btn btn-primary w-full justify-center">Download Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- 1️⃣ Hero Section -->
+    <header class="relative min-h-[85vh] flex items-center bg-corporate-orange border-b border-gray-800">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-corporate-orange/95 via-corporate-orange/80 to-transparent z-10 w-[70%] lg:w-[60%]">
+            </div>
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <img src="estate main.jpeg" alt="Offshore platform" class="h-full w-full object-cover img-premium" />
+        </div>
+
+        <!-- Oil & Gas Logo Badge Position -->
+        <div
+            class="absolute top-10 right-6 md:right-12 z-20 flex items-center bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+            <span
+                class="text-white font-sans tracking-tight italic text-lg opacity-90 tracking-wide font-medium">Banksome
+                <span
+                    class="text-corporate-orange not-italic font-sans font-semibold text-sm uppercase translate-y-[-2px] inline-block ml-1">Oil
+                    & Gas</span></span>
+        </div>
+
+        <div class="relative z-20 w-full px-6 pt-20 pb-16">
+            <div class="mx-auto max-w-[1240px]">
+                <div class="max-w-2xl reveal active">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-0.5 bg-corporate-orange"></div>
+                        <span class="text-xs uppercase tracking-[0.3em] font-bold text-white">Banksome Oil & Gas</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl text-white font-medium leading-[1.1] tracking-tight">
+                        Integrated Oil<br />& Gas Solutions
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-gray-200 font-light max-w-xl leading-relaxed">
+                        Delivering engineering, drilling, logistics, and production support services across onshore and
+                        offshore operations.
+                    </p>
+                    <div class="mt-10 flex flex-wrap items-center gap-4">
+                        <a href="#services"
+                            class="btn btn-primary">
+                            Explore Our Services
+                        </a>
+                        <a href="#contact"
+                            class="btn btn-secondary">
+                            Contact Our Energy Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ About Section – Who We Are -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="mx-auto max-w-[1240px] px-6">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl text-gray-900 leading-tight mb-8">Who We Are</h2>
+                    <div class="h-px w-12 bg-corporate-orange mb-8"></div>
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
+                        <p>
+                            <strong class="text-gray-900 font-semibold">Banksome Oil & Gas</strong> is the energy
+                            services unit of Banksome Global Resources Ltd, established in 2012 to provide specialized
+                            and integrated solutions across the oil and gas value chain.
+                        </p>
+                        <p>
+                            We combine international best practices with strong local expertise to deliver safe,
+                            efficient, and technically sound operations across engineering, logistics, drilling, and
+                            production support.
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal relative h-[400px] lg:h-[500px] w-full isolate">
+                    <div class="absolute inset-0 bg-corporate-orange rounded-lg translate-x-4 translate-y-4 -z-10">
+                    </div>
+                    <img src="about-hero.png" alt="Oil & Gas professional"
+                        class="card-premium reveal" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ Core Capabilities -->
+    <section id="services" class="py-24 md:py-32 bg-corporate-offwhite relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-slate-100 skew-x-[-15deg] translate-x-32 hidden lg:block opacity-40">
+        </div>
+
+        <div class="mx-auto max-w-[1240px] px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-corporate-orange mb-4 block">What We
+                    Do</span>
+                <h2 class="text-4xl md:text-5xl text-gray-900 mb-6">Our Core Capabilities</h2>
+                <div class="h-px w-12 bg-corporate-orange mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="card-premium reveal">
+                    <div
+                        class="w-14 h-14 bg-corporate-orange/10 text-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-corporate-orange group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl text-gray-900 font-semibold mb-3">Engineering &
+                        Technical Services
+                    </h3>
+                    <p class="text-sm text-gray-500 font-light mb-8 flex-grow">Comprehensive engineering solutions for
+                        asset integrity, including design, fabrication, and maintenance.</p>
+                    <a href="javascript:void(0)"
+                        class="text-sm font-semibold text-corporate-orange uppercase tracking-wider flex items-center gap-2 group-hover:gap-3 transition-all mt-auto inline-block border-b border-brand-orange pb-1 max-w-max">
+                        Learn More <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="card-premium reveal">
+                    <div
+                        class="w-14 h-14 bg-corporate-orange/10 text-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-corporate-orange group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl text-gray-900 font-semibold mb-3">Drilling & Production Support</h3>
+                    <p class="text-sm text-gray-500 font-light mb-8 flex-grow">Reliable support functions to ensure
+                        continuous up-time during complex drilling and production phases.</p>
+                    <a href="javascript:void(0)"
+                        class="text-sm font-semibold text-corporate-orange uppercase tracking-wider flex items-center gap-2 group-hover:gap-3 transition-all mt-auto inline-block border-b border-brand-orange pb-1 max-w-max">
+                        Learn More <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="card-premium reveal">
+                    <div
+                        class="w-14 h-14 bg-corporate-orange/10 text-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-corporate-orange group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl text-gray-900 font-semibold mb-3">Offshore & Marine Logistics</h3>
+                    <p class="text-sm text-gray-500 font-light mb-8 flex-grow">Logistical excellence, managing marine
+                        vessels and offshore supply chain operations seamlessly.</p>
+                    <a href="javascript:void(0)"
+                        class="text-sm font-semibold text-corporate-orange uppercase tracking-wider flex items-center gap-2 group-hover:gap-3 transition-all mt-auto inline-block border-b border-brand-orange pb-1 max-w-max">
+                        Learn More <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="card-premium reveal">
+                    <div
+                        class="w-14 h-14 bg-corporate-orange/10 text-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-corporate-orange group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl text-gray-900 font-semibold mb-3">Valves & Control Systems</h3>
+                    <p class="text-sm text-gray-500 font-light mb-8 flex-grow">Supply, testing, and maintenance of
+                        critical valves, instrumentation, and process control systems.</p>
+                    <a href="javascript:void(0)"
+                        class="text-sm font-semibold text-corporate-orange uppercase tracking-wider flex items-center gap-2 group-hover:gap-3 transition-all mt-auto inline-block border-b border-brand-orange pb-1 max-w-max">
+                        Learn More <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ Operational Strength Section -->
+    <section class="py-24 md:py-32 bg-corporate-orange text-white relative overflow-hidden">
+        <!-- Subtle dot pattern or background shape -->
+        <div class="absolute inset-0 opacity-[0.03]"
+            style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div
+            class="absolute top-1/2 -translate-y-1/2 right-0 w-[600px] h-[600px] bg-corporate-orange opacity-5 rounded-full blur-3xl">
+        </div>
+
+        <div class="mx-auto max-w-[1240px] px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+                <div class="reveal">
+                    <img src="estate.jpeg" alt="Operational Excellence"
+                        class="card-premium reveal" />
+                </div>
+                <div class="reveal">
+                    <span class="text-xs uppercase tracking-[0.2em] font-semibold text-corporate-orange mb-4 block">Our
+                        Advantage</span>
+                    <h2 class="text-4xl md:text-5xl text-white leading-tight mb-8">Operational Excellence</h2>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1 w-6 h-6 rounded-full bg-corporate-orange/20 text-corporate-orange flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-sans tracking-tight font-medium text-white mb-2">International
+                                    partnerships &
+                                    local expertise</h4>
+                                <p class="text-gray-400 font-light text-sm line-clamp-2 md:line-clamp-none">Leveraging
+                                    global alliances coupled with deep understanding of the local Nigerian market
+                                    dynamics.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1 w-6 h-6 rounded-full bg-corporate-orange/20 text-corporate-orange flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-sans tracking-tight font-medium text-white mb-2">Strict safety &
+                                    regulatory
+                                    compliance</h4>
+                                <p class="text-gray-400 font-light text-sm line-clamp-2 md:line-clamp-none">
+                                    Uncompromising adherence to HSE standards and regulatory frameworks to guarantee
+                                    safe delivery.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1 w-6 h-6 rounded-full bg-corporate-orange/20 text-corporate-orange flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-sans tracking-tight font-medium text-white mb-2">Full project
+                                    lifecycle
+                                    capability</h4>
+                                <p class="text-gray-400 font-light text-sm line-clamp-2 md:line-clamp-none">From initial
+                                    design and procurement to execution, maintenance, and facility management.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <div
+                                class="mt-1 w-6 h-6 rounded-full bg-corporate-orange/20 text-corporate-orange flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-sans tracking-tight font-medium text-white mb-2">Onshore &
+                                    offshore
+                                    operational support</h4>
+                                <p class="text-gray-400 font-light text-sm line-clamp-2 md:line-clamp-none">Proven track
+                                    record of supporting operations seamlessly in complex environments.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ Call to Action Section -->
+    <section id="contact" class="py-24 md:py-32 bg-white text-center">
+        <div class="mx-auto max-w-4xl px-6 reveal">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight mb-10 tracking-tight">
+                Powering Energy Through Precision and Performance
+            </h2>
+            <a href="contact.html"
+                class="btn btn-primary">
+                Engage With Our Oil & Gas Team
+            </a>
+        </div>
+    </section>
+
+    <!-- 6️⃣ Footer Note (Oil Section Only) -->
+    <!-- Global Corporate Footer -->
+        <!-- Global Corporate Footer - Strict Holding Company -->
+    <footer class="bg-corporate-black py-24 text-gray-400 font-sans border-t flex-none">
+        <div class="mx-auto max-w-[1240px] px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 border-b border-white/10 pb-16">
+                <!-- Col 1 -->
+                <div class="lg:pr-6">
+                    <a href="index.html" class="flex items-center gap-3 mb-8">
+                        <img src="logo.svg" alt="Banksome Logo" class="h-10 brightness-0 invert" />
+                    </a>
+                    <p class="text-sm font-light leading-relaxed mb-8">
+                        A structured, multi-sector holding company operating across infrastructure, energy, and industrial platforms.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center text-[11px] uppercase tracking-[0.15em] text-white hover:text-corporate-orange transition-colors font-semibold group border-b border-white/20 pb-1 hover:border-corporate-orange">
+                        Contact Headquarters
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.25em] font-bold text-white mb-8">Construction</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors block">Design & Build</a></li>
+                        <li><a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors block">General Contracting</a></li>
+                        <li><a href="businesses.html#construction" class="hover:text-corporate-orange transition-colors block">Infrastructure</a></li>
+                        <li><a href="projects.html" class="hover:text-corporate-orange transition-colors block">Portfolio</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.25em] font-bold text-white mb-8">Facility & Asset</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors block">Lifecycle Protection</a></li>
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors block">Maintenance</a></li>
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors block">Property Management</a></li>
+                        <li><a href="facility-management.html" class="hover:text-corporate-orange transition-colors block">HSE & Compliance</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.25em] font-bold text-white mb-8">Renewable Energy</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors block">Solar Deployment</a></li>
+                        <li><a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors block">Hybrid Systems</a></li>
+                        <li><a href="renewable-energy.html" class="hover:text-corporate-orange transition-colors block">Sustainable Assets</a></li>
+                    </ul>
+                </div>
+                <!-- Col 5 -->
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.25em] font-bold text-white mb-8">Oil & Gas</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="oil-gas.html" class="hover:text-corporate-orange transition-colors block">Engineering Services</a></li>
+                        <li><a href="oil-gas.html" class="hover:text-corporate-orange transition-colors block">Drilling Support</a></li>
+                        <li><a href="oil-gas.html" class="hover:text-corporate-orange transition-colors block">Logistics</a></li>
+                        <li><a href="oil-gas.html" class="hover:text-corporate-orange transition-colors block">Production Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="mt-8 flex flex-col items-center justify-between gap-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-medium md:flex-row">
+                <div>&copy; 2026 Banksome Global Resources. All rights reserved.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Corporate Governance</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    </div>
+
+    
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle Setup
+    const toggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (toggle && mobileMenu) {
+        toggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // 2. Scroll Reveal Animations (Subtle fade/slide)
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px" // triggers slightly before scrolling fully into view
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Unobserve after activating so it doesn't repeat on scroll up
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    // Apply observer to any element with .reveal
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // 3. Apple-Level Bespoke Hero Slider (Arrowless, 11s timing)
+    const track = document.getElementById('heroTrack');
+    const paginations = document.querySelectorAll('.js-pagination');
+    const processBars = document.querySelectorAll('.js-progress');
+    
+    if (track && paginations.length > 0) {
+        let currentIndex = 0;
+        const totalSlides = paginations.length;
+        const slideDuration = 11000; // Exact 11 seconds requirement
+        let slideTimer;
+
+        // Reset all progress bars to 0 width and no transition
+        const resetProgress = () => {
+            processBars.forEach(bar => {
+                bar.style.transition = 'none';
+                bar.classList.remove('w-full');
+                bar.classList.add('w-0');
+            });
+            // Force reflow to ensure removal of transitions takes effect instantly
+            void track.offsetWidth; 
+        };
+
+        // Start progress bar animation for the current slide
+        const startProgress = (index) => {
+            const currentBar = processBars[index];
+            currentBar.style.transition = `width ${slideDuration}ms linear`;
+            currentBar.classList.remove('w-0');
+            currentBar.classList.add('w-full');
+        };
+
+        const updateSlider = (index) => {
+            // Update track position (100% * index)
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Re-trigger reveal animations inside the active slide
+            const slides = track.children;
+            Array.from(slides).forEach(slide => {
+                const reveals = slide.querySelectorAll('.reveal');
+                reveals.forEach(r => r.classList.remove('active'));
+            });
+            
+            setTimeout(() => {
+                const activeReveals = slides[index].querySelectorAll('.reveal');
+                activeReveals.forEach(r => r.classList.add('active'));
+            }, 50); // slight delay to ensure position has updated
+
+            resetProgress();
+            
+            // For past slides, show them as fully completed (optional, or just keep them empty. Apple usually keeps them empty or full. Let's keep empty for minimalism, except the active one).
+            startProgress(index);
+        };
+
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider(currentIndex);
+        };
+
+        const startTimer = () => {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, slideDuration);
+        };
+
+        // Manual click on pagination indicators
+        paginations.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const index = parseInt(e.currentTarget.getAttribute('data-index'));
+                if (index !== currentIndex) {
+                    currentIndex = index;
+                    updateSlider(currentIndex);
+                    startTimer(); // Restart the 11s loop on manual click
+                }
+            });
+        });
+
+        // Initialize first slide
+        updateSlider(0);
+        startTimer();
+    }
+});
+    </script>
+</body>
+
+</html>
